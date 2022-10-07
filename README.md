@@ -24,3 +24,13 @@ be displayed when combined with the data__* in `SOURCEDATA.TXT`. (__1__ being th
 > Note: I will simply be executing `python main.py` with the project's root directory as the current working directory. Whatever happens after that is up to you- just make sure the `.csv` you create exists in `data/destination/` after this runs (and that all of the requirements were met, of course).
 
 > Note: use Python >= 3.7 to solve and do not use any other packages or dependencies (e.g. Pandas). You are limited to the Python Standard Library. The goal is to show us your coding style and see how you would approach the problem using plain Python.
+
+### Approach:
+1) The two text files, `SOURCECOLUMNS.txt` and `SOURCEDATA.txt`, were firsly open and read to read in the information using the open() and read() functions in Python.
+  - The `SOURCECOLUMNS.txt` was read in by line, splitted by the new line character "\n", and stored as a list of strings containing the headers. Each string was a line in the text file. 
+  - The `SOURCEDATA.txt` was read in as a whole. The pipe symbols "|" were replaced by commas "," to store as csv in the next step.
+2) The list of headers was sorted using the order numbers of the headers.
+3) The headers were joined together to form a string. In this string, the headers were separated by commas.
+4) Then, the headers string was combined with the sourcedata string with a new line character between them to form a final string that cotained headers and data.
+5) The final string was write to csv using the open() and write() function in Python.
+6) The csv file is loaded into `/data/destination` by using `load_csv()` method in `SomeStorageLibrary`.

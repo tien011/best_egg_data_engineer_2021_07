@@ -18,10 +18,9 @@ if __name__ == '__main__':
     data = data_file.read().replace('|', ',')
     data_file.close()
 
-    ls_name = []
     cols_sorted = sorted(cols, key = lambda x: int(x.split('|')[0]))
-    for item in cols_sorted:
-        ls_name.append(item.split('|')[1])
+
+    ls_name = [item.split('|')[1] for item in cols_sorted]
 
     final_table = ','.join(ls_name) +'\n' + data
     f = open('column_data.csv', 'w')
