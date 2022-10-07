@@ -23,9 +23,9 @@ if __name__ == '__main__':
     ls_name = [item.split('|')[1] for item in cols_sorted]
 
     final_table = ','.join(ls_name) +'\n' + data
-    f = open('column_data.csv', 'w')
+    f = open('processed_orders.csv', 'w')
     f.write(final_table)
     f.close()
     
-    SSL().load_csv('column_data.csv')
+    SSL().load_csv('processed_orders.csv')
 
